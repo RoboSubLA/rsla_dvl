@@ -168,7 +168,7 @@ class DvlPublisher : public rclcpp::Node
 
       // pitch (y-axis rotation)
       double sinp = 2 * (msg->w * msg->y - msg->z * msg->x);
-      double pitch = 0;
+      double pitch;
       if (abs(sinp) >= 1)
         pitch = copysign(M_PI / 2, sinp); // use 90 degrees if out of range
       else
